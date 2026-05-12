@@ -1,0 +1,10 @@
+{
+  "name": "zk-wiki",
+  "version": "0.1.0",
+  "description": "Zettelkasten + LLM Wiki hybrid knowledge base for personal learning and daily notes",
+  "author": {
+    "name": "Inho Jeong",
+    "email": "inho.jeong@wonderit.kr"
+  },
+  "keywords": ["zettelkasten", "wiki", "knowledge-base", "notes", "learning"]
+}
