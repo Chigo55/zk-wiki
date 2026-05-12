@@ -1,6 +1,6 @@
 {
   "name": "zk-wiki",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Zettelkasten + LLM Wiki hybrid knowledge base for personal learning and daily notes",
   "author": {
     "name": "Inho Jeong",
