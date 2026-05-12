@@ -1,0 +1,20 @@
+{
+  "name": "zk-wiki",
+  "description": "Zettelkasten + LLM Wiki hybrid knowledge base plugin",
+  "owner": {
+    "name": "Inho Jeong",
+    "email": "inho.jeong@wonderit.kr"
+  },
+  "plugins": [
+    {
+      "name": "zk-wiki",
+      "description": "Zettelkasten + LLM Wiki hybrid knowledge base for personal learning and daily notes",
+      "version": "0.1.0",
+      "source": "./",
+      "author": {
+        "name": "Inho Jeong",
+        "email": "inho.jeong@wonderit.kr"
+      }
+    }
+  ]
+}
