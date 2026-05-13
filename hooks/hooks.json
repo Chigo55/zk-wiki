@@ -1,15 +1,3 @@
 {
-  "hooks": {
-    "PostToolUse": [
-      {
-        "matcher": "Write|Edit",
-        "hooks": [
-          {
-            "type": "prompt",
-            "prompt": "The tool just wrote or edited a file. Check if the file path contains '/raw/' or '\\raw\\'. If it does, output EXACTLY this message and nothing else: '[raw/] 새 파일이 추가/수정되었습니다: {file_path}\\n/zk-ingest {file_path} 로 처리하시겠습니까?' — replacing {file_path} with the actual file path. If the file path does NOT contain '/raw/' or '\\raw\\', output nothing."
-          }
-        ]
-      }
-    ]
-  }
+  "hooks": {}
 }
