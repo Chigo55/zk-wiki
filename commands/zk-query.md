@@ -13,13 +13,13 @@ allowed-tools: Read, Write, Grep, Glob
 
 2. **index.md 읽기**: 위키 전체 카탈로그를 읽어 관련 페이지 후보 식별.
 
-3. **관련 페이지 검색**: Grep으로 질문의 핵심 키워드를 `zettel/`, `wiki/`에서 검색.
+3. **관련 페이지 검색**: Grep으로 질문의 핵심 키워드를 `wiki/`에서 검색.
 
 4. **페이지 읽기**: 상위 관련 페이지(최대 10개) 내용 읽기.
 
 5. **합성 답변 작성**:
    - 읽은 페이지 내용을 종합하여 답변
-   - 각 주장에 출처 인용: `([[zettel-id-slug]])`
+   - 각 주장에 출처 인용: `([[wiki/concepts/slug]])`
    - 위키에 없는 정보는 명시: "위키에 해당 정보 없음"
 
 6. **저장 제안**: 답변이 새로운 통찰을 담고 있으면:
@@ -31,6 +31,6 @@ allowed-tools: Read, Write, Grep, Glob
 
 ```
 /zk-query "LLM 위키 패턴의 핵심 원칙은?"
-/zk-query "Zettelkasten에서 permanent note란?"
+/zk-query "소프트웨어 공학의 주요 개발 모형은?"
 /zk-query "ingest와 RAG의 차이점"
 ```

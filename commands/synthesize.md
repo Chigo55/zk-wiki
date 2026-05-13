@@ -1,11 +1,11 @@
 ---
 name: synthesize
-description: Synthesize related zettel notes into a new Map of Content (MOC) page in wiki/moc/. Usage: /synthesize <topic>
+description: Synthesize related wiki pages into a new Map of Content (MOC) page in wiki/moc/. Usage: /synthesize <topic>
 argument-hint: <topic>
 allowed-tools: Read, Write, Grep, Glob, Agent
 ---
 
-`$ARGUMENTS` 주제와 관련된 zettel·wiki 페이지를 모아 새로운 MOC(Map of Content) 합성 페이지를 생성한다.
+`$ARGUMENTS` 주제와 관련된 wiki 페이지를 모아 새로운 MOC(Map of Content) 합성 페이지를 생성한다.
 
 ## 실행 절차
 
@@ -15,7 +15,7 @@ allowed-tools: Read, Write, Grep, Glob, Agent
 
 3. **synthesizer agent**에 위임:
    - 주제: `$ARGUMENTS`
-   - 검색 범위: `zettel/`, `wiki/concepts/`, `wiki/entities/`
+   - 검색 범위: `wiki/concepts/`, `wiki/entities/`, `wiki/summaries/`
    - 요청: 관련 페이지 수집 → 합성 MOC 작성
 
 4. synthesizer가 생성한 `wiki/moc/<slug>.md` 확인 후 경로 출력
@@ -47,11 +47,13 @@ links: []
 
 ## 핵심 주장
 
-## 관련 Zettel
-
 ## 관련 개념
 
 ## 관련 엔티티
+
+## 관련 요약
+
+## 통합적 관점
 
 ## 열린 질문
 ```

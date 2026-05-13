@@ -9,13 +9,13 @@ allowed-tools: Read, Grep, Glob, Agent
 ## 실행 절차
 
 1. **linter agent** 호출:
-   - 검사 범위: `zettel/`, `wiki/`, `index.md`
+   - 검사 범위: `wiki/`, `raw/`, `index.md`
    - 검사 항목 전달 (아래 참조)
 
 2. 보고서 출력:
    - 심각(Critical): 깨진 링크, 존재하지 않는 파일 참조
    - 경고(Warning): orphan 페이지, 누락된 cross-reference
-   - 정보(Info): index.md에 없는 페이지, 업데이트 오래된 페이지
+   - 정보(Info): index.md에 없는 페이지, 미처리 fleeting 노트
 
 3. log.md에 append:
    ```
@@ -24,12 +24,13 @@ allowed-tools: Read, Grep, Glob, Agent
 
 ## linter가 확인하는 항목
 
-- **Orphan 페이지**: inbound link가 0인 zettel/wiki 페이지
-- **깨진 링크**: `[[링크]]` 대상 파일이 존재하지 않음
-- **index.md 누락**: `zettel/`·`wiki/` 에 있지만 index.md에 없는 페이지
+- **Orphan 페이지**: inbound link가 0인 wiki 페이지
+- **깨진 링크**: `[[링크]]` 대상 파일이 `wiki/`에 존재하지 않음
+- **index.md 누락**: `wiki/`에 있지만 index.md에 없는 페이지
 - **모순 감지**: 동일 주제에서 상충하는 주장이 있는 페이지 쌍
-- **요약 없는 raw 소스**: `raw/`에 있지만 `wiki/summaries/`에 요약 없는 파일
-- **링크 없는 zettel**: `links: []`이고 본문에도 `[[링크]]` 없는 permanent note
+- **요약 없는 raw 소스**: `raw/`(fleeting 제외)에 있지만 `wiki/summaries/`에 요약 없는 파일
+- **미처리 fleeting 노트**: `raw/fleeting/`에 있지만 아직 wiki로 승격되지 않은 파일
+- **링크 없는 페이지**: `links: []`이고 본문에도 `[[링크]]` 없는 wiki 페이지
 
 ## 예시
 

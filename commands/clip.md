@@ -36,7 +36,7 @@ clipped: "YYYY-MM-DD"
 
 6. 완료 후 요약 출력:
    - 저장 경로
-   - 추출된 zettel 수
+   - 생성된 wiki 페이지 수
    - 갱신된 wiki 페이지
 
 ## 예시

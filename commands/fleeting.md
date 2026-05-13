@@ -1,6 +1,6 @@
 ---
 name: fleeting
-description: Capture a quick fleeting note instantly to fleeting/ directory. No classification or linking — just capture the idea. Usage: /fleeting <text>
+description: Capture a quick fleeting note instantly to raw/fleeting/ directory. No classification or linking — just capture the idea. Usage: /fleeting <text>
 argument-hint: <text>
 allowed-tools: Write, Bash
 ---
@@ -14,7 +14,7 @@ allowed-tools: Write, Bash
 2. 파일명 생성:
    - 현재 타임스탬프: `yyyymmddhhmm` 형식 (PowerShell: `Get-Date -Format "yyyyMMddHHmm"`)
    - 슬러그: `$ARGUMENTS`의 첫 4–5 단어를 소문자 + 하이픈으로 변환
-   - 파일명: `fleeting/<timestamp>-<slug>.md`
+   - 파일명: `raw/fleeting/<timestamp>-<slug>.md`
 
 3. 파일 내용:
 ```markdown
@@ -32,9 +32,9 @@ links: []
 ```
 
 4. 저장 완료 후 출력:
-   > "`fleeting/<파일명>` 저장 완료."
+   > "`raw/fleeting/<파일명>` 저장 완료. `/zk-ingest raw/fleeting/<파일명>`으로 위키에 반영 가능."
 
-분류·링크·wiki 갱신은 하지 않는다. 나중에 `/zk-ingest` 또는 수동으로 permanent zettel로 승격.
+분류·링크·wiki 갱신은 하지 않는다. 나중에 `/zk-ingest`로 위키 페이지로 승격.
 
 ## 예시
 

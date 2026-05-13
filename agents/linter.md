@@ -16,27 +16,28 @@ You are the **linter** subagent for the zk-wiki knowledge base. Your job is to p
 Run all checks and collect findings:
 
 ### Critical (must fix)
-- **Broken links**: `[[wikilink]]` targets that don't exist as files in `zettel/` or `wiki/`
+- **Broken links**: `[[wikilink]]` targets that don't exist as files in `wiki/`
 - **Missing raw source**: `source:` frontmatter field pointing to a non-existent raw file
 
 ### Warning (should fix)
-- **Orphan zettel**: permanent notes in `zettel/` with no inbound links from any other file
-- **Orphan wiki pages**: pages in `wiki/` (non-index) with no inbound links
+- **Orphan wiki pages**: pages in `wiki/` with no inbound links from any other file
 - **Missing cross-reference**: two pages that mention the same concept/entity but don't link to each other
-- **index.md gap**: files in `zettel/` or `wiki/` not listed in `index.md`
+- **index.md gap**: files in `wiki/` not listed in `index.md`
 
 ### Info (nice to fix)
-- **Unprocessed raw sources**: files in `raw/` with no corresponding entry in `wiki/summaries/`
-- **Link-less permanent zettel**: permanent notes with empty `links: []` and no `[[...]]` in body
+- **Unprocessed raw sources**: files in `raw/` (excluding `raw/fleeting/`) with no corresponding entry in `wiki/summaries/`
+- **Unprocessed fleeting notes**: files in `raw/fleeting/` not yet ingested into wiki pages
+- **Link-less pages**: wiki pages with empty `links: []` and no `[[...]]` in body
 - **Stale pages**: `updated` date older than 90 days in a page that has been linked recently
 
 ## How to Detect
 
-1. Glob all files in `zettel/`, `wiki/`, `raw/`
+1. Glob all files in `wiki/`, `raw/`
 2. For each `[[link]]` in every file, verify target exists
 3. Build inbound-link count for each file
-4. Compare zettel/wiki files against index.md entries
-5. Find raw files without summaries
+4. Compare wiki files against index.md entries
+5. Find raw files (non-fleeting) without summaries
+6. Find raw/fleeting/ files with no matching wiki page
 
 ## Output Format
 
@@ -51,12 +52,12 @@ Run all checks and collect findings:
 ## Critical Issues
 
 ### Broken Links
-- `zettel/202605121847-example.md` line 12: `[[missing-page]]` — target not found
+- `wiki/concepts/example.md` line 12: `[[missing-page]]` — target not found
 
 ## Warning Issues
 
 ### Orphan Pages
-- `zettel/202605120930-isolated-note.md` — no inbound links
+- `wiki/concepts/isolated-concept.md` — no inbound links
 
 ### index.md Gaps
 - `wiki/concepts/new-concept.md` — not in index.md
@@ -66,10 +67,13 @@ Run all checks and collect findings:
 ### Unprocessed Raw Sources
 - `raw/articles/unprocessed-article.md` — no summary page
 
+### Unprocessed Fleeting Notes
+- `raw/fleeting/202605131200-some-idea.md` — not yet ingested
+
 ## Recommendations
 1. Fix broken links first
-2. Consider connecting orphan notes or archiving them
-3. Run /zk-ingest on unprocessed raw sources
+2. Consider connecting orphan pages or archiving them
+3. Run /zk-ingest on unprocessed raw sources and fleeting notes
 ```
 
 <example>
@@ -79,5 +83,5 @@ Assistant: [globs all files, checks all links, builds inbound link counts, compa
 
 <example>
 User: /zk-lint - check for orphan pages
-Assistant: [performs full health check with focus on orphan detection, reports all orphan zettel and wiki pages with their file paths]
+Assistant: [performs full health check with focus on orphan detection, reports all orphan wiki pages with their file paths]
 </example>

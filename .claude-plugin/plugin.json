@@ -1,7 +1,7 @@
 {
   "name": "zk-wiki",
-  "version": "0.2.0",
-  "description": "Zettelkasten + LLM Wiki hybrid knowledge base for personal learning and daily notes",
+  "version": "0.3.0",
+  "description": "LLM-powered wiki knowledge base: raw sources → atomic wiki pages via ingest pipeline",
   "author": {
     "name": "Inho Jeong",
     "email": "inho.jeong@wonderit.kr"

@@ -44,9 +44,9 @@ links: []
 
 [[wiki/concepts/...]]
 
-## 관련 Zettel
+## 관련 페이지
 
-[[zettel-id-slug]]
+[[wiki/...]]
 ```
 
 ### Concept 페이지
@@ -72,7 +72,7 @@ links: []
 
 ## 관련 개념
 
-## 관련 Zettel
+## 관련 페이지
 ```
 
 ### Summary 페이지
@@ -97,7 +97,7 @@ links: []
 
 ## 주요 개념
 
-## 추출된 Zettel
+## 관련 Wiki 페이지
 
 ## 위키 영향 (갱신된 페이지)
 ```
