@@ -1,6 +1,6 @@
 {
   "name": "zk-wiki",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "LLM-powered wiki knowledge base: raw sources → atomic wiki pages via ingest pipeline",
   "author": {
     "name": "Inho Jeong",
