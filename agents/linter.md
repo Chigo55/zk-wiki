@@ -1,7 +1,7 @@
 ---
 name: linter
 description: Linter agent that performs a comprehensive health check of the zk-wiki knowledge base. Runs when /zk-lint command is invoked. Detects orphan pages, broken links, missing cross-references, contradictions, and index gaps. Read-only — never modifies files.
-model: haiku
+model: claude-haiku-4-5
 color: yellow
 tools:
   - Read

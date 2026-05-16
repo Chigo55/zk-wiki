@@ -3,6 +3,10 @@ name: zettelkasten-conventions
 description: Use this skill when creating, naming, or linking zettel notes in the zk-wiki knowledge base. Triggers on: "새 zettel 만들어줘", "fleeting note 승격", "zettel ID 뭐야", "노트 간 링크 추가", "permanent note 작성", "atomic note".
 ---
 
+> **[DEPRECATED — 충돌 주의]** 이 스킬의 "fleeting 승격" 절차 중 "원본 fleeting 파일 삭제" 단계는
+> `llm-behavior.md` 및 `wiki-conventions` 스킬의 **raw/ 불변성 규칙과 충돌**한다.
+> `raw/fleeting/` 파일은 절대 삭제·이동하지 않는다. 해당 단계는 무시할 것.
+
 # Zettelkasten Conventions
 
 이 지식베이스의 Zettelkasten 규칙을 따른다. 모든 zettel 생성·링크·승격 시 이 규칙을 적용한다.

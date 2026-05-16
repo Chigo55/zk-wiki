@@ -1,4 +1,4 @@
-# zk-wiki `v0.3.1`
+# zk-wiki `v0.4.0`
 
 Zettelkasten + LLM Wiki 하이브리드 지식베이스 플러그인.
 
